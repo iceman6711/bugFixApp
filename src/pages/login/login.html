@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title style="text-align: center;">
+        <div class="Spacing"></div>
+        <ion-icon ios="ios-bug-outline" name="bug"></ion-icon>
+        BugFix App
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-content padding id="Pagelogin" style="background-color:Default;"  class="LoginContainer">
+    <div class='Spacing'></div>
+  <div id="formLogin" class="formLogin">
+      <div class="bar bar-header bar-dark">
+          <h1 id="login-heading" class="H1">
+              Login
+            </h1>
+      </div>
+  <div id="login-container">
+    <form id="login-form">
+      <ion-item id="login-input1" class="usrcpf">
+        <ion-label stacked>
+          CPF
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="userCPF" pattern="06([0-9]{8})" placeholder="XXX.XXX.XXX-XX" name="userCPF" (ngModelChange)="userCPF = format(userCPF)" maxlength="14"></ion-input>
+      </ion-item>
+      <ion-item id="login-input2" class="usrpsswrd">
+        <ion-label stacked>
+          Senha
+        </ion-label>
+        <ion-input type="password" [(ngModel)]="usrpsswrd" placeholder="••••••••" name="Senha" maxlength="8"></ion-input>
+      </ion-item>
+    </form>
+  </div>
+  </div>    
+  <button id="login-button" ion-button round color="primary" block style="font-weight:300;border-radius:50px 50px 50px 50px;" class="btnlogin" (click)="login(userCPF,usrpsswrd);">
+    Login
+  </button>
+  <ion-fab bottom right class="devOption">
+      <button ion-fab mini color="light"><ion-icon name="arrow-dropup"></ion-icon></button>
+      <ion-fab-list side="top">
+        <button ion-fab (click)="defineCon('hive');" color="secondary">Hive</button>
+        <button ion-fab (click)="defineCon('home');" color="danger">Local</button>
+      </ion-fab-list>
+    </ion-fab>       
+</ion-content>

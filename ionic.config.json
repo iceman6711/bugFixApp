@@ -1,0 +1,7 @@
+{
+  "name": "BugFixAPP",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

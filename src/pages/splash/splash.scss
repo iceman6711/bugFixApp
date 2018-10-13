@@ -1,0 +1,45 @@
+page-splash {
+    .Splash{
+        background-color: black;
+        width: 100%;
+        height: 100%;
+    }
+    .scroll-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Bug {
+        opacity: 0;
+        animation: 1s 0.5s linear fadeIn;
+        animation-fill-mode: forwards;
+    }
+    .imagem{
+        float: center;
+        align-content: center;
+        display: block;
+    }
+    .st0{font-family: brushstrike;
+         src: url('../../../www/assets/fonts/brush.ttf');
+         fill:#EEF8F7;
+         font-size:36px;}
+    .st2{fill:none;}
+    .st3{font-size:36px;}
+}
+
+@keyframes fadeInAndSpin {
+
+100% {
+    opacity: 1;
+    transform: rotate3d(1, 1, 0, 0deg);
+}
+
+}
+
+@keyframes fadeIn {
+
+100% {
+    opacity: 1;
+}
+
+}

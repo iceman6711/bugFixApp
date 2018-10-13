@@ -1,0 +1,31 @@
+<ion-header>
+    <div class="Spacing"></div>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only [menuToggle]="Menu">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">
+      Menu
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div id="menu-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">
+    <p style="color:#000000;font-size:20px;">
+      Welcome, {{pNome}}
+    </p>
+  </div>
+  <div id="menu-markdown2" class="show-list-numbers-and-dots">
+    <p style="color:#000000;font-size:12px;">
+      Please, choose one of the options at the Menu.
+    </p>
+  </div>
+</ion-content>
+<ion-fab top right class="devOption">
+  <button ion-fab mini color="light"><ion-icon name="contact" royal></ion-icon></button>
+  <ion-fab-list side="bottom">
+    <button ion-fab (click)="logout();"><ion-icon name="log-out" color="danger"></ion-icon></button>
+  </ion-fab-list>
+</ion-fab>  

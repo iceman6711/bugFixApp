@@ -1,0 +1,110 @@
+<ion-header>
+    <div class="Spacing"></div>
+    <ion-navbar>
+    <ion-title style="text-align: center;" color="light">
+        
+      Bug #2
+    </ion-title>
+    <ion-buttons right>
+        <button ion-button color="primary" (click)="fechaModal();">
+            Gravar
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form id="moreInfoBugs" class="bugEditor">
+    <ion-slides pager>
+        <ion-slide class="bugSlide">
+
+            <!-- Testa o Status do Bug! -->
+            <div class="center" *ngIf="bgCorrigido">
+                <h3>Este Bug está </h3>
+                <img src="../../assets/imgs/check150.png" style="display:block;width:150px;height:150px;margin-left:auto;margin-right:auto;"/>
+                <h1 style="color: #32db64;">Corrigido</h1>
+            </div> 
+            <div class="center" *ngIf="bgPendente">
+                <h3>Este Bug está </h3>
+                <img src="../../assets/imgs/cXSfpfvOQaCr4TUoWLFF_waning.png" style="display:block;width:150px;height:150px;margin-left:auto;margin-right:auto;"/>
+                <h1 style="color: rgba(255, 188, 5, 0.829);">Pendente</h1>
+            </div> 
+            <div class="center" *ngIf="bgCorrecao">
+                <h3>Este Bug está </h3>
+                <img src="../../assets/imgs/construct.png" style="display:block;width:150px;height:150px;margin-left:auto;margin-right:auto;"/>
+                <h1 style="color: #B44BFF;">em Correção!</h1>
+            </div>  
+            <div class="center" *ngIf="bgRejeitado">
+                <h3>Este Bug está </h3>
+                <img src="../../assets/imgs/archived.png" style="display:block;width:150px;height:150px;margin-left:auto;margin-right:auto;"/>
+                <h1 style="color: #222;">Rejeitado!!</h1>
+            </div>            
+
+
+            <br>
+            <ion-label left style="float:left;">
+                Descricao
+            </ion-label>
+            <ion-item id="moreInfoBugs-textarea1">
+            <ion-textarea placeholder="adfasdfasf" value="Este foi um bug fixado na fase de Dev :)"></ion-textarea>
+            </ion-item>
+            <ion-label left style="float:left;">
+                Procedimento
+            </ion-label>
+            <ion-item id="moreInfoBugs-textarea2">
+            <ion-textarea placeholder="adfsdfadfadfasdfasdfafadfasdfadfadf" value="O Procedimento não existe."></ion-textarea>
+            </ion-item>
+        </ion-slide>   
+        <ion-slide>
+            <ion-item>
+                <ion-label stacked left>
+                    Versao
+                </ion-label>
+                <ion-select>
+                        <ion-option value="5110">5.110</ion-option>
+                        <ion-option value="5111">5.111</ion-option>
+                        <ion-option value="5112">5.112</ion-option>
+                        <ion-option value="5113" selected="true">5.113</ion-option>
+                </ion-select>    
+            </ion-item>
+            <ion-item>
+                <ion-label stacked left>
+                    Release
+                </ion-label>
+                <ion-select>
+                        <ion-option value="ALFA">ALFA</ion-option>
+                        <ion-option value="BRAVO">BRAVO</ion-option>
+                        <ion-option value="CHARLIE">CHARLIE</ion-option>
+                        <ion-option value="DELTA" selected="true">DELTA</ion-option>
+                </ion-select>    
+            </ion-item>
+        </ion-slide>
+        <ion-slide>
+                <ion-item>
+                    <ion-label stacked left>
+                        Ticket
+                    </ion-label>
+                    <ion-input type="text" name="ticketBug" value="#1234"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label stacked left>
+                        Análise
+                    </ion-label>
+                    <ion-select>
+                            <ion-option value="pendente">Pendente</ion-option>
+                            <ion-option value="aprovado">Aprovado</ion-option>
+                            <ion-option value="recusado" selected="true">Recusado</ion-option>
+                    </ion-select>    
+                </ion-item>
+                    <ion-item>
+                        <ion-label stacked left>
+                                Feedback
+                        </ion-label>    
+                        <ion-textarea placeholder="HAHA!" value="FOi RECUSADO POIS TU É UM BABACA!"></ion-textarea>
+                    </ion-item>
+            </ion-slide>  
+    </ion-slides>   
+  </form>
+<ion-footer style="text-align: center;" color="titulo2">
+    <p>Cadastrado por : UM MANÍACO QUALQUER</p>
+</ion-footer>
+</ion-content>
