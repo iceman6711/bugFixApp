@@ -84,9 +84,6 @@ unFormat(val) {
      if(Con=='hive'){   
             this.ConnectionType=1;
      }else{ this.ConnectionType=2;}
-     console.log(Con);
-     console.log(this.ConnectionType);
-     console.log(this.plt.platforms());
   }
   SolicitaHive(CPF,Senha){
     var url                                    = '';

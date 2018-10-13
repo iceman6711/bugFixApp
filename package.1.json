@@ -1,9 +1,15 @@
 {
   "name": "BugFixAPP",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
   "private": true,
+  "scripts": {
+    "start": "ionic-app-scripts serve",
+    "clean": "ionic-app-scripts clean",
+    "build": "ionic-app-scripts build",
+    "lint": "ionic-app-scripts lint"
+  },
   "dependencies": {
     "@angular/animations": "5.2.11",
     "@angular/common": "5.2.11",
