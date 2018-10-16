@@ -1,8 +1,7 @@
 <ion-header>
     <div class="Spacing"></div>
     <ion-navbar>
-    <ion-title style="text-align: center;" color="light">
-        
+    <ion-title style="text-align: center;" color="light" *ngIf="!bgNovo">  
       Bug #2
     </ion-title>
     <ion-buttons right>
@@ -13,32 +12,44 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <form id="moreInfoBugs" class="bugEditor">
+  <form id="moreInfoBugs" class="bugEditor" *ngIf="!bgNovo">
     <ion-slides pager>
-        <ion-slide class="bugSlide">
 
-            <!-- Testa o Status do Bug! -->
-            <div class="center" *ngIf="bgCorrigido">
+
+        <!-- Testa se eh para cadastrar um novo Bug -->
+        <ion-slide class="bugSlide">
+ 
+        <!-- Imagem e titulo para um bug corrigido -->
+        <div class="center" *ngIf="bgCorrigido">
                 <h3>Este Bug está </h3>
                 <img src="../../assets/imgs/check150.png" style="display:block;width:150px;height:150px;margin-left:auto;margin-right:auto;"/>
                 <h1 style="color: #32db64;">Corrigido</h1>
             </div> 
+    
+    
+            <!-- Imagem e titulo para um bug pendente -->
             <div class="center" *ngIf="bgPendente">
                 <h3>Este Bug está </h3>
                 <img src="../../assets/imgs/cXSfpfvOQaCr4TUoWLFF_waning.png" style="display:block;width:150px;height:150px;margin-left:auto;margin-right:auto;"/>
                 <h1 style="color: rgba(255, 188, 5, 0.829);">Pendente</h1>
-            </div> 
+            </div>
+            
+    
+            <!-- Imagem e titulo para um bug em correcao -->
             <div class="center" *ngIf="bgCorrecao">
                 <h3>Este Bug está </h3>
                 <img src="../../assets/imgs/construct.png" style="display:block;width:150px;height:150px;margin-left:auto;margin-right:auto;"/>
                 <h1 style="color: #B44BFF;">em Correção!</h1>
             </div>  
+    
+    
+            <!-- Imagem e titulo para um bug rejeitado -->
             <div class="center" *ngIf="bgRejeitado">
                 <h3>Este Bug está </h3>
                 <img src="../../assets/imgs/archived.png" style="display:block;width:150px;height:150px;margin-left:auto;margin-right:auto;"/>
                 <h1 style="color: #222;">Rejeitado!!</h1>
-            </div>            
-
+            </div> 
+    
 
             <br>
             <ion-label left style="float:left;">
@@ -104,7 +115,124 @@
             </ion-slide>  
     </ion-slides>   
   </form>
-<ion-footer style="text-align: center;" color="titulo2">
+
+
+  <!-- Form para cadastro de um novo bug -->
+  <form id="newBug" class="bugEditor" *ngIf="bgNovo">
+    <ion-slides pager>
+        <ion-slide class="bugSlide" *ngIf="bgNovo">
+
+            <!-- Imagem e titulo para um bug corrigido -->
+            <div class="center" *ngIf="bgCorrigido">
+                <h3>Este Bug está </h3>
+                <img src="../../assets/imgs/check150.png" style="display:block;width:150px;height:150px;margin-left:auto;margin-right:auto;"/>
+                <h1 style="color: #32db64;">Corrigido</h1>
+            </div> 
+
+
+            <!-- Imagem e titulo para um bug pendente -->
+            <div class="center" *ngIf="bgPendente">
+                <h3>Este Bug está </h3>
+                <img src="../../assets/imgs/cXSfpfvOQaCr4TUoWLFF_waning.png" style="display:block;width:150px;height:150px;margin-left:auto;margin-right:auto;"/>
+                <h1 style="color: rgba(255, 188, 5, 0.829);">Pendente</h1>
+            </div>
+            
+
+            <!-- Imagem e titulo para um bug em correcao -->
+            <div class="center" *ngIf="bgCorrecao">
+                <h3>Este Bug está </h3>
+                <img src="../../assets/imgs/construct.png" style="display:block;width:150px;height:150px;margin-left:auto;margin-right:auto;"/>
+                <h1 style="color: #B44BFF;">em Correção!</h1>
+            </div>  
+
+
+            <!-- Imagem e titulo para um bug rejeitado -->
+            <div class="center" *ngIf="bgRejeitado">
+                <h3>Este Bug está </h3>
+                <img src="../../assets/imgs/archived.png" style="display:block;width:150px;height:150px;margin-left:auto;margin-right:auto;"/>
+                <h1 style="color: #222;">Rejeitado!!</h1>
+            </div> 
+
+            <!-- Imagem e titulo para um novo bug -->
+            <div class="center" *ngIf="bgNovo">
+                    <h3>Novo Bug!</h3>
+                    <img src="../../assets/imgs/new.png" style="display:block;width:150px;height:150px;margin-left:auto;margin-right:auto;"/>
+            </div>           
+
+
+            <br>
+            <ion-label left style="float:left;">
+                Descricao
+            </ion-label>
+            <ion-item id="moreInfoBugs-textarea1">
+            <ion-textarea placeholder="Digite a Descricao do BUG" value=""></ion-textarea>
+            </ion-item>
+            <ion-label left style="float:left;">
+                Procedimento
+            </ion-label>
+            <ion-item id="moreInfoBugs-textarea2">
+            <ion-textarea placeholder="Digite o Procedimento para replicar o BUG" value=""></ion-textarea>
+            </ion-item>
+        </ion-slide>   
+        <ion-slide>
+            <ion-label left style="float:left;">
+                Versao
+            </ion-label>
+            <ion-item>
+                <ion-select>
+
+                    <!-- Apos fazer a comunicacao com o Outpost essa parte sera dinamica -->
+                        <ion-option value="5110">5.110</ion-option>
+                        <ion-option value="5111">5.111</ion-option>
+                        <ion-option value="5112">5.112</ion-option>
+                        <ion-option value="5113">5.113</ion-option>
+                </ion-select>    
+            </ion-item>
+
+
+            <ion-label left style="float:left;">
+                    Release
+            </ion-label>
+            <ion-item>
+                
+                <ion-select>
+
+                    <!-- Apos fazer a comunicacao com o Outpost essa parte sera dinamica -->
+                        <ion-option value="ALFA">ALFA</ion-option>
+                        <ion-option value="BRAVO">BRAVO</ion-option>
+                        <ion-option value="CHARLIE">CHARLIE</ion-option>
+                        <ion-option value="DELTA">DELTA</ion-option>
+                </ion-select>    
+            </ion-item>
+            <ion-label left style="float:left;">
+                    Ticket
+            </ion-label>
+            <ion-item>
+                <ion-input type="text" placeholder="Digite o Numero do Ticket(caso haja). "name="ticketBug" value=""></ion-input>
+            </ion-item>
+
+        </ion-slide>
+        <ion-slide>
+                <ion-label left style="float:left;">
+                    Análise
+                </ion-label>
+                <ion-item>
+                    <ion-select>
+                            <ion-option value="pendente" selected=true>Pendente</ion-option>
+                            <ion-option value="aprovado">Aprovado</ion-option>
+                            <ion-option value="recusado">Recusado</ion-option>
+                    </ion-select>    
+                </ion-item>
+                <ion-label left style="float:left;">
+                        Feedback
+                </ion-label>
+                    <ion-item>   
+                        <ion-textarea placeholder="Digite o Feedback" value=""></ion-textarea>
+                    </ion-item>
+            </ion-slide> 
+    </ion-slides> 
+</form>
+<ion-footer style="text-align: center;" color="titulo2" *ngIf="!bgNovo">
     <p>Cadastrado por : UM MANÍACO QUALQUER</p>
 </ion-footer>
 </ion-content>

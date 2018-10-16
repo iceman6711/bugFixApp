@@ -10,6 +10,7 @@ export class MoreInfoBugsPage {
     bgPendente  : boolean = false;
     bgCorrecao  : boolean = false;
     bgRejeitado : boolean = false;
+    bgNovo      : boolean = false;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -19,6 +20,7 @@ export class MoreInfoBugsPage {
         case 'pendente'  : { this.bgPendente  = true; break; }
         case 'correcao'  : { this.bgCorrecao  = true; break; }
         case 'rejeitado' : { this.bgRejeitado = true; break; }
+        case 'NewBug'    : { this.bgNovo      = true; break; } 
         default          : {                          break; }
      }
   }
