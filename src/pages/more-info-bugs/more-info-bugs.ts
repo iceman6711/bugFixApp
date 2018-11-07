@@ -11,17 +11,18 @@ export class MoreInfoBugsPage {
     bgCorrecao  : boolean = false;
     bgRejeitado : boolean = false;
     bgNovo      : boolean = false;
+    pNome       : string;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
      var tipo : string = navParams.get('tipo');
      switch (tipo){
-        case 'corrigido' : { this.bgCorrigido = true; break; }
-        case 'pendente'  : { this.bgPendente  = true; break; }
-        case 'correcao'  : { this.bgCorrecao  = true; break; }
-        case 'rejeitado' : { this.bgRejeitado = true; break; }
-        case 'NewBug'    : { this.bgNovo      = true; break; } 
-        default          : {                          break; }
+        case 'corrigido' : { this.bgCorrigido = true;  this.pNome = 'Thiago Serrano';        break; }
+        case 'pendente'  : { this.bgPendente  = true;  this.pNome = 'Um Psicopata Qualquer'; break; }
+        case 'correcao'  : { this.bgCorrecao  = true;  this.pNome = 'Um Maníaco Qualquer';   break; }
+        case 'rejeitado' : { this.bgRejeitado = true;  this.pNome = 'Vivian Ikehara';        break; }
+        case 'NewBug'    : { this.bgNovo      = true;  this.pNome = 'Thor Odinson';          break; } 
+        default          : {                                                                 break; }
      }
   }
   fechaModal(){
