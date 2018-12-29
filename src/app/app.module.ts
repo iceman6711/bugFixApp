@@ -1,3 +1,4 @@
+import { MyTasksPage } from './../pages/my-tasks/my-tasks';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule, Component } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -17,6 +18,7 @@ import { MoreInfoBugsPage } from '../pages/more-info-bugs/more-info-bugs';
     LoginPage,
     MenuPage,
     MyBugsPage,
+    MyTasksPage,
     MoreInfoBugsPage,
     Splash
     
@@ -31,6 +33,7 @@ import { MoreInfoBugsPage } from '../pages/more-info-bugs/more-info-bugs';
     LoginPage,
     MenuPage,
     MyBugsPage,
+    MyTasksPage,
     MoreInfoBugsPage,
     Splash
   ],

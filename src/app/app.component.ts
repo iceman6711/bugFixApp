@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { Splash } from '../pages/splash/splash';
 import { MyBugsPage } from '../pages/my-bugs/my-bugs';
+import { MyTasksPage } from '../pages/my-tasks/my-tasks';
 
 
 @Component({
@@ -33,6 +34,10 @@ export class BugFixAPP {
 
   mostraBugs(){
     const modal = this.modalCtrl.create(MyBugsPage);
+    modal.present();
+  }
+  mostraTasks(){
+    const modal = this.modalCtrl.create(MyTasksPage);
     modal.present();
   }
   

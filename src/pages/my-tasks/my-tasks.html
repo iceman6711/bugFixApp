@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+      <ion-buttons left>
+          <button ion-button (click)="fechaModal();" color="primary">
+            Fechar
+          </button>
+        </ion-buttons>
+    <ion-title style="text-align: center;">
+      My Tasks
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button color="primary">
+        Filtrar
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page3">
+
+    <div class="barra">
+        <ion-buttons right>
+            <button ion-button color="primary" (click)="telaMoreInfo('NewTask');" >
+                <ion-icon name="add" style="padding: 5px;" large></ion-icon>
+                New Task
+            </button>
+        </ion-buttons>
+    </div>
+  
+    <!-- Atualmente está fixo, mas será dinâmico! -->
+  <ion-list id="myTasks-list3">
+    <ion-item-sliding>
+      <ion-item id="myTasks-list-item3">
+        <ion-icon name="pulse" color="secondary" item-left></ion-icon>
+          Cadastrar Bugs
+        <ion-note item-right>oi</ion-note>
+      </ion-item>
+      <ion-item-options side="right">
+          <button ion-button color="light" style="background-color: white;">
+              <ion-icon name="trash" item-left color="danger" large></ion-icon>
+              Erase
+          </button>  
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
