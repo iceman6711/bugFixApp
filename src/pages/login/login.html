@@ -18,16 +18,16 @@
   <div id="login-container">
     <form id="login-form">
       <ion-item id="login-input1" class="usrcpf">
-        <ion-label stacked>
+        <ion-label floating>
           CPF
         </ion-label>
-        <ion-input type="text" [(ngModel)]="userCPF" pattern="06([0-9]{8})" placeholder="XXX.XXX.XXX-XX" name="userCPF" (ngModelChange)="userCPF = format(userCPF)" maxlength="14"></ion-input>
+        <ion-input type="text" [(ngModel)]="userCPF" pattern="06([0-9]{8})"  name="userCPF" (ngModelChange)="userCPF = format(userCPF)" maxlength="14"></ion-input>
       </ion-item>
       <ion-item id="login-input2" class="usrpsswrd">
-        <ion-label stacked>
+        <ion-label floating>
           Senha
         </ion-label>
-        <ion-input type="password" [(ngModel)]="usrpsswrd" placeholder="••••••••" name="Senha" maxlength="8"></ion-input>
+        <ion-input type="password" [(ngModel)]="usrpsswrd" name="Senha" maxlength="8"></ion-input>
       </ion-item>
     </form>
   </div>

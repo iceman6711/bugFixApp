@@ -28,18 +28,59 @@
   
     <!-- Atualmente está fixo, mas será dinâmico! -->
   <ion-list id="myTasks-list3">
-    <ion-item-sliding>
-      <ion-item id="myTasks-list-item3">
-        <ion-icon name="pulse" color="secondary" item-left></ion-icon>
-          Cadastrar Bugs
-        <ion-note item-right>oi</ion-note>
+    <ion-item-sliding *ngFor="let item of tasklist; let i=index">
+      <ion-item id="myTasks-list-item3" (click)="oi();">
+        <ion-icon name="alert" color="energized" item-left></ion-icon>
+          <h1>{{tasklist[i].titulo}}</h1>
+          <h2>{{tasklist[i].descricao}}</h2>
       </ion-item>
+
+      <!-- Opções do Botão -->
       <ion-item-options side="right">
-          <button ion-button color="light" style="background-color: white;">
+          <button ion-button color="light" style="background-color: white;" (click)="DeleteItem(tasklist);" >
               <ion-icon name="trash" item-left color="danger" large></ion-icon>
               Erase
           </button>  
       </ion-item-options>
     </ion-item-sliding>
+
+
+      <!-- Novo Botão -->
+      <ion-item-sliding id="sliding2">
+      <ion-item id="myTasks-list-item3" (click)="oi();">
+          <ion-icon name="done-all" color="secondary" item-left></ion-icon>
+            <h1>#2</h1>
+            <h2>Olhar Wonderlist</h2>
+          <ion-note item-right>oi</ion-note>
+        </ion-item>
+
+      <!-- Opções do Item 2-->
+        <ion-item-options side="right">
+            <button ion-button color="light" style="background-color: white;">
+                <ion-icon name="trash" item-left color="danger" large></ion-icon>
+                Erase
+            </button>  
+        </ion-item-options>
+      </ion-item-sliding>
+
+      <ion-item-sliding #sliding3 (Swipe)="DeleteItem2(sliding3);">
+      <!-- Novo Item na Lista -->
+        <ion-item id="myTasks-list-item3" (click)="oi();" >
+            <ion-icon name="pulse" color="danger" item-left></ion-icon>
+              <h1>#3</h1>
+              <h2>Visualizar Zen Desk!</h2>
+            <ion-note item-right>oi</ion-note>
+          </ion-item>
+
+      <!-- Opções do Terceiro Item -->
+          <ion-item-options side="right">
+              <button ion-button color="light" style="background-color: white;" (click)="DeleteItem(sliding3);">
+                  <ion-icon name="trash" item-left color="danger" large></ion-icon>
+                  Erase
+              </button>  
+          </ion-item-options>
+      </ion-item-sliding>
+
+   
   </ion-list>
 </ion-content>
