@@ -62,6 +62,11 @@ export class MyTasksPage {
         titulo    : '#3',
         descricao : 'Visualizar ZenDesk!',
         status    : 1
+      },
+      {
+        titulo    : '#4',
+        descricao : 'Finalizar o APP!!',
+        status    : 0
       }
     ]
   }
