@@ -25,9 +25,12 @@ export class MyTasksPage {
         this.tasklist.splice(index, 1);
     }
   }
-  DeleteItem(slidingItem: ItemSliding,item){
+  DeleteItem(slidingItem: ItemSliding , item){
     let porcentagem = slidingItem.getSlidingPercent();
-    if(porcentagem>4.5){
+    console.log(porcentagem);
+    if(porcentagem>2.5){
+      console.log('Apagou!');
+
       let index = this.tasklist.indexOf(item);
  
       if(index > -1){
@@ -58,7 +61,7 @@ export class MyTasksPage {
       {
         titulo    : '#3',
         descricao : 'Visualizar ZenDesk!',
-        status    : 0
+        status    : 1
       }
     ]
   }
