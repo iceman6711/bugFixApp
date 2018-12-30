@@ -18,17 +18,21 @@ export class MyTasksPage {
   fechaModal(){
     this.navCtrl.pop();
   }
-  DeleteItem(item){
+  DeleteItemBtn(item){
     let index = this.tasklist.indexOf(item);
  
     if(index > -1){
         this.tasklist.splice(index, 1);
     }
   }
-  DeleteItem2(slidingItem: ItemSliding){
+  DeleteItem(slidingItem: ItemSliding,item){
     let porcentagem = slidingItem.getSlidingPercent();
     if(porcentagem>4.5){
-      console.log('Apagou!');
+      let index = this.tasklist.indexOf(item);
+ 
+      if(index > -1){
+          this.tasklist.splice(index, 1);
+      }
       const toast = this.toastCtrl.create({
           message  : 'Task apagada...',
           duration : 2000,

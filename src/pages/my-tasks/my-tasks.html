@@ -28,7 +28,7 @@
   
     <!-- Atualmente está fixo, mas será dinâmico! -->
   <ion-list id="myTasks-list3">
-    <ion-item-sliding *ngFor="let item of tasklist; let i=index">
+    <ion-item-sliding #slidingI *ngFor="let item of tasklist; let I=index" (Swipe)="DeleteItem(slidingI,tasklist);">
       <ion-item id="myTasks-list-item3" (click)="oi();">
         <ion-icon name="alert" color="energized" item-left></ion-icon>
           <h1>{{tasklist[i].titulo}}</h1>
@@ -37,7 +37,7 @@
 
       <!-- Opções do Botão -->
       <ion-item-options side="right">
-          <button ion-button color="light" style="background-color: white;" (click)="DeleteItem(tasklist);" >
+          <button ion-button color="light" style="background-color: white;" (click)="DeleteItemBtn(tasklist);" >
               <ion-icon name="trash" item-left color="danger" large></ion-icon>
               Erase
           </button>  
