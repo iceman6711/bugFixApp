@@ -24,6 +24,12 @@ export class MyTasksPage {
     if(index > -1){
         this.tasklist.splice(index, 1);
     }
+    const toast = this.toastCtrl.create({
+      message  : 'Task apagada...',
+      duration : 2000,
+      position : 'top'
+    });
+    toast.present();
   }
   DeleteItem(slidingItem: ItemSliding , item){
     let porcentagem = slidingItem.getSlidingPercent();
