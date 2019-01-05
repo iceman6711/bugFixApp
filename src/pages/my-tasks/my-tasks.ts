@@ -33,12 +33,8 @@ export class MyTasksPage {
   }
   DeleteItem(slidingItem: ItemSliding , item){
     let porcentagem = slidingItem.getSlidingPercent();
-    console.log(porcentagem);
     if(porcentagem>2.5){
-      console.log('Apagou!');
-
       let index = this.tasklist.indexOf(item);
- 
       if(index > -1){
           this.tasklist.splice(index, 1);
       }

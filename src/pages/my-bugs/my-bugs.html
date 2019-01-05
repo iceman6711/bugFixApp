@@ -32,10 +32,10 @@
       <ion-item color="none" id="myBugs" (click)="telaMoreInfo(item);">
 
         <!-- Testa o Status do Bug para definir o ícone-->
-        <ion-icon name="warning"   item-left color="energized" *ngIf="buglist[I].Status==0"></ion-icon>
-        <ion-icon name="construct" item-left color="royal"     *ngIf="buglist[I].Status==1"></ion-icon>
-        <ion-icon name="done-all"  item-left color="secondary" *ngIf="buglist[I].Status==2"></ion-icon>
-        <ion-icon name="archive"   item-left color="dark"      *ngIf="buglist[I].Status==3"></ion-icon>
+        <ion-icon name="warning"   large item-left color="energized" *ngIf="buglist[I].Status==0"></ion-icon>
+        <ion-icon name="construct" large item-left color="royal"     *ngIf="buglist[I].Status==1"></ion-icon>
+        <ion-icon name="done-all"  large item-left color="secondary" *ngIf="buglist[I].Status==2"></ion-icon>
+        <ion-icon name="archive"   large  item-left color="dark"      *ngIf="buglist[I].Status==3"></ion-icon>
 
 
         <h2># {{buglist[I].ID}}</h2>

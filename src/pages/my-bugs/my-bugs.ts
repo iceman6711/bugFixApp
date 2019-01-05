@@ -70,7 +70,7 @@ export class MyBugsPage {
   // Deleta a Linha do Bug
   DeleteItem(slidingItem: ItemSliding , item){
     let porcentagem = slidingItem.getSlidingPercent();
-    if(porcentagem>2.5){
+    if(porcentagem>1.5){
       let index = this.buglist.indexOf(item);
       if(index > -1){
           this.buglist.splice(index, 1);
