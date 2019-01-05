@@ -55,22 +55,22 @@ export class MyTasksPage {
   setTasks(){
     this.tasklist = [
       { 
-        titulo    : '#1',
+        id        : 1,
         descricao : 'Cadastrar Bugs!',
         status    : 0
       },
       {
-        titulo    : '#2',
+        id        : 2,
         descricao : 'Olhar Wonderlist!',
         status    : 2
       },
       {
-        titulo    : '#3',
+        id        : 3,
         descricao : 'Visualizar ZenDesk!',
         status    : 1
       },
       {
-        titulo    : '#4',
+        id        : 4,
         descricao : 'Finalizar o APP!!',
         status    : 0
       }

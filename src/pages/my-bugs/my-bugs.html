@@ -19,116 +19,48 @@
 <ion-content padding>
   <div class="barra">
       <ion-buttons right>
-          <button ion-button color="primary" (click)="telaMoreInfo('NewBug');" >
+          <button ion-button color="primary" (click)="telaNewBug('NewBug');" >
               <ion-icon name="add" style="padding: 5px;" large></ion-icon>
               Novo Bug
           </button>
       </ion-buttons>
   </div>
   <ion-list id="myBugs-list">
-    <!-- Provisório, após programar o Outpost isto será preenchido dinamicamente -->
     
-    <!-- Botão 1 -->
-    <ion-item-sliding>
-      <ion-item color="none" id="myBugs-list-item1" (click)="telaMoreInfo('pendente');">
-        <ion-icon name="warning" item-left color="energized"></ion-icon>
-        <h2>#1 Bug Pendente</h2>
-        <h3>Prioridade : Baixa</h3>
-        <p>Este não é um bug importante no momento</p>
+    <!-- Preenchimento Automático -->
+    <ion-item-sliding #bugs *ngFor="let item of buglist; let I=index" (Swipe)="DeleteItem(bugs , item);">
+      <ion-item color="none" id="myBugs" (click)="telaMoreInfo(item);">
+
+        <!-- Testa o Status do Bug para definir o ícone-->
+        <ion-icon name="warning"   item-left color="energized" *ngIf="buglist[I].Status==0"></ion-icon>
+        <ion-icon name="construct" item-left color="royal"     *ngIf="buglist[I].Status==1"></ion-icon>
+        <ion-icon name="done-all"  item-left color="secondary" *ngIf="buglist[I].Status==2"></ion-icon>
+        <ion-icon name="archive"   item-left color="dark"      *ngIf="buglist[I].Status==3"></ion-icon>
+
+
+        <h2># {{buglist[I].ID}}</h2>
+
+        <!-- Testa a Prioridade do Bug -->
+        <h3 *ngIf="buglist[I].Priority==0">Prioridade : Baixa</h3>
+        <h3 *ngIf="buglist[I].Priority==1">Prioridade : Normal</h3>
+        <h3 *ngIf="buglist[I].Priority==2">Prioridade : Alta</h3>
+        <h3 *ngIf="buglist[I].Priority==3">Prioridade : Urgente</h3>
+
+        <p>{{buglist[I].Descricao}}</p>
+
       </ion-item>
 
       <ion-item-options side="right" color="light">
+
             <button ion-button color="light" style="background-color: white;">
                 <ion-icon name="create" item-left color="royal" large></ion-icon>
                 Edit
             </button>
             <button ion-button color="light" style="background-color: white;">
-                <ion-icon name="trash" item-left color="danger" large></ion-icon>
+                <ion-icon name="trash" item-left color="danger" large (click)="DeleteBugBtn(item);"></ion-icon>
                 Erase
             </button>  
       </ion-item-options>
     </ion-item-sliding>
-
-    <!-- Botão 2 -->
-    <ion-item-sliding>
-      <ion-item color="none" id="myBugs-list-item2" (click)="telaMoreInfo('corrigido');">
-        <ion-icon name="done-all" item-left color="secondary"></ion-icon>
-        <h2>#2 Bug Corrigido</h2>
-        <h3>Prioridade : Alta</h3>
-        <p>Este era um bug que foi corrigido</p>
-      </ion-item>
-
-      <ion-item-options side="right" color="light">
-            <button ion-button style="background-color: white;" color="light">
-                <ion-icon name="create" item-left color="royal" large></ion-icon>
-                Edit
-            </button>
-            <button ion-button style="background-color: white;" color="light" (click)="deletaBug();">
-                <ion-icon name="trash" item-left color="danger" large></ion-icon>
-                Erase
-            </button>  
-      </ion-item-options>
-    </ion-item-sliding>
-
-    <!-- Botão 3 -->
-    <ion-item-sliding>
-      <ion-item color="none" id="myBugs-list-item3" (click)="telaMoreInfo('correcao');">
-          <ion-icon name="construct" item-left color="primary"></ion-icon>
-          <h2>#3 Bug em correção</h2>
-          <h3>Prioridade : Baixa</h3>
-          <p>Este não é um bug importante no momento</p>
-      </ion-item>
-
-      <ion-item-options side="right" color="light">
-            <button ion-button style="background-color: white;" color="light" (click)="telaMoreInfo('correcao');">
-                <ion-icon name="create" item-left color="royal" large></ion-icon>
-                Edit
-            </button>
-            <button ion-button style="background-color: white;" color="light">
-                <ion-icon name="trash" item-left color="danger" large></ion-icon>
-                Erase
-            </button>  
-      </ion-item-options>
-    </ion-item-sliding>
-
-    <!-- Botão 4 -->
-    <ion-item-sliding>
-      <ion-item color="none" id="myBugs-list-item4" (click)="telaMoreInfo('rejeitado');">
-          <ion-icon name="archive" item-left color="black"></ion-icon>
-          <h2>#4 Bug Rejeitado</h2>
-          <h3>Prioridade : Baixa</h3>
-          <p>Este não é um bug importante no momento</p>
-      </ion-item>
-
-      <ion-item-options side="right" color="light">
-            <button ion-button style="background-color: white;" color="light" (click)="telaMoreInfo('rejeitado');">
-                <ion-icon name="create" item-left color="royal" large></ion-icon>
-                Edit
-            </button>
-            <button ion-button style="background-color: white;" color="light">
-                <ion-icon name="trash" item-left color="danger" large></ion-icon>
-                Erase
-            </button>  
-      </ion-item-options>
-    </ion-item-sliding>
-    <ion-item-sliding>
-        <ion-item color="none" id="myBugs-list-item4" (click)="telaMoreInfo('pendente');">
-            <ion-icon name="warning" item-left color="energized"></ion-icon>
-            <h2>#5 Bug Pendente</h2>
-            <h3>Prioridade : Baixa</h3>
-            <p>Este não é um bug importante no momento</p>
-        </ion-item>
-  
-        <ion-item-options side="right" color="light">
-              <button ion-button style="background-color: white;" color="light" (click)="telaMoreInfo('pendente');">
-                  <ion-icon name="create" item-left color="royal" large></ion-icon>
-                  Edit
-              </button>
-              <button ion-button style="background-color: white;" color="light">
-                  <ion-icon name="trash" item-left color="danger" large></ion-icon>
-                  Erase
-              </button>  
-        </ion-item-options>
-      </ion-item-sliding>
   </ion-list>
 </ion-content>

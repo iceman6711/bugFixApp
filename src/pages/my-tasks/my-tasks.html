@@ -28,12 +28,12 @@
   
     <!-- Preenche dinamicamente de acordo com a Var Tasklist! -->
   <ion-list id="myTasks-list3">
-    <ion-item-sliding #sliding1 *ngFor="let item of tasklist; let I=index" (Swipe)="DeleteItem(sliding1 , item);">
-      <ion-item id="myTasks-list-item3" (click)="oi();">
+    <ion-item-sliding #tasks *ngFor="let item of tasklist; let I=index" (Swipe)="DeleteItem(tasks , item);">
+      <ion-item id="myTasks" (click)="oi();">
         <ion-icon name="warning"  color="energized" item-left *ngIf="tasklist[I].status==0"></ion-icon>
         <ion-icon name="done-all" color="secondary" item-left *ngIf="tasklist[I].status==1"></ion-icon>
         <ion-icon name="pulse"    color="danger"    item-left *ngIf="tasklist[I].status==2"></ion-icon>
-          <h1>{{tasklist[I].titulo}}</h1>
+          <h1># {{tasklist[I].id}}</h1>
           <h2>{{tasklist[I].descricao}}</h2>
       </ion-item>
 
