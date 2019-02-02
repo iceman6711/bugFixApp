@@ -1,7 +1,10 @@
 <ion-header>
   <ion-navbar>
-    <ion-title style="text-align: center;">
+    <ion-title style="text-align: center;" *ngIF="!NewTask">
       Task {{id}}
+    </ion-title>
+    <ion-title style="text-align: center;" *ngIF="NewTask">
+      New Task
     </ion-title>
     <ion-buttons end>
       <button ion-button color="primary">

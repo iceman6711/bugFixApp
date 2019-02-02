@@ -8,10 +8,14 @@ import { ToastController } from 'ionic-angular';
   templateUrl: 'more-info-tasks.html'
 })
 export class MoreInfoTasksPage {
-    id : any;
+    id      : any;
+    NewTask : any;
 
   constructor(public navCtrl: NavController, public toastCtrl: ToastController, public navParams: NavParams) {
       this.id = navParams.get('idTask');
+      if(this.id=='NewTask'){
+         this.NewTask=true;
+      }
 
   }
   fechaModal(){

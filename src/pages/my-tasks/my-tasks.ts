@@ -74,4 +74,7 @@ export class MyTasksPage {
     let index = this.tasklist.indexOf(item);    
     this.navCtrl.push(MoreInfoTasksPage, {'idTask': this.tasklist[index].id });
   }
+  telaNewTask(){
+    this.navCtrl.push(MoreInfoTasksPage, {'idTask': 'NewTask'});
+  }
 }
