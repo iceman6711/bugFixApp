@@ -1,3 +1,29 @@
+<ion-menu [content]="content" id="Menu">
+
+  <ion-header>
+    <ion-toolbar color="dark">
+      <ion-title>Options</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button ion-item detail-none (click)="mostraBugs();">
+          My Bugs
+      </button>
+      <button ion-item detail-none (click)="mostraTasks();">
+          My Tasks
+      </button>
+      <button ion-item detail-none>
+          My Anotations
+      </button>
+      <button ion-item menuClose="Menu" detail-none>
+          Close Menu
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
 <ion-header>
     <div class="Spacing"></div>
   <ion-navbar>
@@ -11,7 +37,7 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
+<ion-content padding #content>
   <div id="menu-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">
     <p style="color:#000000;font-size:20px;">
       Welcome, {{pNome}}!

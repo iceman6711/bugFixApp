@@ -12,24 +12,5 @@
 </ion-header>
 <ion-content padding id="page3">
 
-    <!-- Preenche dinamicamente de acordo com a Var Tasklist! -->
-  <ion-list id="myTasks-list3">
-    <ion-item-sliding #tasks *ngFor="let item of tasklist; let I=index" (Swipe)="DeleteItem(tasks , item);">
-      <ion-item id="myTasks" (click)="oi();">
-        <ion-icon name="warning"  color="energized" item-left *ngIf="tasklist[I].status==0"></ion-icon>
-        <ion-icon name="done-all" color="secondary" item-left *ngIf="tasklist[I].status==1"></ion-icon>
-        <ion-icon name="pulse"    color="danger"    item-left *ngIf="tasklist[I].status==2"></ion-icon>
-          <h1># {{tasklist[I].id}}</h1>
-          <h2>{{tasklist[I].descricao}}</h2>
-      </ion-item>
 
-      <!-- Opções do Botão -->
-      <ion-item-options side="right">
-          <button ion-button color="light" style="background-color: white;" (click)="DeleteItemBtn(item);" >
-              <ion-icon name="trash" item-left color="danger" large></ion-icon>
-              Erase
-          </button>  
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
 </ion-content>

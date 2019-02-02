@@ -15,11 +15,6 @@ export class MyBugsPage {
       this.setBugs();
   }
 
-  // Fecha a tela e volta para o Menu
-  fechaModal() {
-    this.navCtrl.pop();
-  }
-
   // Abre a tela de mais informações
   telaMoreInfo(item){
     let index = this.buglist.indexOf(item);    

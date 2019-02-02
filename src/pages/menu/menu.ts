@@ -1,3 +1,5 @@
+import { MyTasksPage } from './../my-tasks/my-tasks';
+import { MyBugsPage } from './../my-bugs/my-bugs';
 import { Component } from '@angular/core';
 import { NavController, MenuController, NavParams, Platform } from 'ionic-angular';
 import { LoginPage } from '../login/login';
@@ -78,6 +80,12 @@ presentAlert(v,a){
   mostraMenu(){
     this.menu.enable(true, 'Menu');
   } 
+  mostraBugs(){
+    this.navCtrl.push(MyBugsPage);
+  }
+  mostraTasks(){
+    this.navCtrl.push(MyTasksPage);
+  }
   logout(){
     this.navCtrl.setRoot(LoginPage);
   }
