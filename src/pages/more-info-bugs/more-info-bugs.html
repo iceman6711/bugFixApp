@@ -1,8 +1,10 @@
 <ion-header>
-    <div class="Spacing"></div>
     <ion-navbar>
     <ion-title style="text-align: center;" color="light" *ngIf="!bgNovo">  
       Bug #2
+    </ion-title>
+    <ion-title style="text-align: center;" color="light" *ngIf="bgNovo">  
+      New Bug!
     </ion-title>
     <ion-buttons right>
         <button ion-button color="primary" (click)="fechaModal();">
@@ -15,7 +17,7 @@
   <form id="moreInfoBugs" class="bugEditor" *ngIf="!bgNovo">
     <ion-slides pager>
 
-
+        <div class="spacing"></div>
         <!-- Testa se eh para cadastrar um novo Bug -->
         <ion-slide class="bugSlide">
  

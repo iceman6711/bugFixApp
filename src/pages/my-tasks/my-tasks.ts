@@ -16,9 +16,6 @@ export class MyTasksPage {
       this.setTasks();
      
   }
-  fechaModal(){
-    this.navCtrl.pop();
-  }
   DeleteItemBtn(item){
     let index = this.tasklist.indexOf(item);
  
