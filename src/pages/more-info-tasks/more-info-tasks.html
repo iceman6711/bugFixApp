@@ -1,9 +1,9 @@
 <ion-header>
   <ion-navbar>
-    <ion-title style="text-align: center;" *ngIF="!NewTask">
+    <ion-title style="text-align: center;" *ngIf="!NewTask">
       Task {{id}}
     </ion-title>
-    <ion-title style="text-align: center;" *ngIF="NewTask">
+    <ion-title style="text-align: center;" *ngIf="NewTask">
       New Task
     </ion-title>
     <ion-buttons end>
