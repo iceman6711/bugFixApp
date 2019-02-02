@@ -1,3 +1,4 @@
+import { MoreInfoTasksPage } from './../more-info-tasks/more-info-tasks';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ItemSliding } from 'ionic-angular';
@@ -71,5 +72,9 @@ export class MyTasksPage {
         status    : 0
       }
     ]
+  }
+  telaMoreInfo(item){
+    let index = this.tasklist.indexOf(item);    
+    this.navCtrl.push(MoreInfoTasksPage, {'idTask': this.tasklist[index].id });
   }
 }

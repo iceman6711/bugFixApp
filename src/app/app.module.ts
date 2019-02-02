@@ -11,6 +11,7 @@ import { Splash } from '../pages/splash/splash';
 import { MenuPage} from '../pages/menu/menu';
 import { MyBugsPage } from '../pages/my-bugs/my-bugs';
 import { MoreInfoBugsPage } from '../pages/more-info-bugs/more-info-bugs'; 
+import { MoreInfoTasksPage } from '../pages/more-info-tasks/more-info-tasks';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MoreInfoBugsPage } from '../pages/more-info-bugs/more-info-bugs';
     MyBugsPage,
     MyTasksPage,
     MoreInfoBugsPage,
+    MoreInfoTasksPage,
     Splash
     
   ],
@@ -35,6 +37,7 @@ import { MoreInfoBugsPage } from '../pages/more-info-bugs/more-info-bugs';
     MyBugsPage,
     MyTasksPage,
     MoreInfoBugsPage,
+    MoreInfoTasksPage,
     Splash
   ],
   providers: [

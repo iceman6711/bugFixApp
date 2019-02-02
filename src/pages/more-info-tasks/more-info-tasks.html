@@ -1,35 +1,21 @@
 <ion-header>
   <ion-navbar>
-      <ion-buttons left>
-          <button ion-button (click)="fechaModal();" color="primary">
-            Fechar
-          </button>
-        </ion-buttons>
     <ion-title style="text-align: center;">
-      My Tasks
+      Task {{id}}
     </ion-title>
     <ion-buttons end>
       <button ion-button color="primary">
-        Filtrar
+          Salvar
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page3">
 
-    <div class="barra">
-        <ion-buttons right>
-            <button ion-button color="primary" (click)="telaMoreInfo('NewTask');" >
-                <ion-icon name="add" style="padding: 5px;" large></ion-icon>
-                New Task
-            </button>
-        </ion-buttons>
-    </div>
-  
     <!-- Preenche dinamicamente de acordo com a Var Tasklist! -->
   <ion-list id="myTasks-list3">
     <ion-item-sliding #tasks *ngFor="let item of tasklist; let I=index" (Swipe)="DeleteItem(tasks , item);">
-      <ion-item id="myTasks" (click)="telaMoreInfo(item);">
+      <ion-item id="myTasks" (click)="oi();">
         <ion-icon name="warning"  color="energized" item-left *ngIf="tasklist[I].status==0"></ion-icon>
         <ion-icon name="done-all" color="secondary" item-left *ngIf="tasklist[I].status==1"></ion-icon>
         <ion-icon name="pulse"    color="danger"    item-left *ngIf="tasklist[I].status==2"></ion-icon>
