@@ -83,14 +83,14 @@ unFormat(val) {
   defineCon(Con){
      if(Con=='hive'){   
             this.ConnectionType=1;
-     }else{ this.ConnectionType=2;}
+     }else{ this.ConnectionType=2; }
   }
   SolicitaHive(CPF,Senha){
     var url                                    = '';
     let loading = this.ldctrl.create({content : "Logando...."});
     loading.present();
     if(this.ConnectionType<=1){
-            url                                ='http://www.bugfixhive.com.br/Control/cLogin.php?user=true&dev=true&master=trulyistheonethatpushhimselftothelimit&cpf='+CPF+'&senha='+Senha;
+            url                                ='http://www.bugfixhive.com.br:8080/Control/cLogin.php?user=true&dev=true&master=trulyistheonethatpushhimselftothelimit&cpf='+CPF+'&senha='+Senha;
     }else{  url                                ='http://10.0.0.10:9995/Control/cLogin.php?user=true&dev=true&master=trulyistheonethatpushhimselftothelimit&cpf='+CPF+'&senha='+Senha;  }
     var getData='';
     return new Promise((resolve)=>{ 

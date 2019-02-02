@@ -37,7 +37,7 @@ presentAlert(v,a){
   carregaNome(){
     var url                                    = '';
     if(this.ConnectionType<=1){
-            url                                ='http://www.bugfixhive.com.br/Control/cMenu.php?AuthKey=Knowledgeisthetruepower&pID='+this.pID;
+            url                                ='http://www.bugfixhive.com.br:8080/Control/cMenu.php?AuthKey=Knowledgeisthetruepower&pID='+this.pID;
     }else{  url                                ='http://10.0.0.10:9995/Control/cMenu.php?AuthKey=Knowledgeisthetruepower&pID='+this.pID }
     var getData='';
     return new Promise((resolve)=>{ 
