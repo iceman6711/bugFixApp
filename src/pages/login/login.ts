@@ -94,7 +94,7 @@ unFormat(val) {
     }else{  url                                ='http://10.0.0.10:9995/Control/cLogin.php?user=true&dev=true&master=trulyistheonethatpushhimselftothelimit&cpf='+CPF+'&senha='+Senha;  }
     var getData='';
     return new Promise((resolve)=>{ 
-        if(this.plt.is('ios') || this.plt.is('android')){
+        if((this.plt.is('ios') || this.plt.is('android')) && !this.plt.is('mobileweb')){
         this.http.get(url,getData,'Access-Control-Allow-Origin: *').then((response:any)=> {
             if(response.status=200){
                 try {
