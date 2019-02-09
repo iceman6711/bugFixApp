@@ -7,7 +7,7 @@
       New Task
     </ion-title>
     <ion-buttons end>
-      <button ion-button color="primary">
+      <button ion-button color="primary" (click)="fechaModal();">
           Salvar
       </button>
     </ion-buttons>
@@ -58,21 +58,21 @@
 
     <!-- Corrigido -->
     <ion-select cancelText="Oops!" *ngIf="tkCorrigido">
-            <ion-option value="1" selected="true">Finalizada</ion-option>
+            <ion-option value="1" selected="true">Concluída</ion-option>
             <ion-option value="2">Pendente</ion-option>
             <ion-option value="3">Parado</ion-option>
     </ion-select>  
     
     <!-- Pendente -->
     <ion-select cancelText="Oops!" *ngIf="tkPendente">
-        <ion-option value="1">Finalizada</ion-option>
+        <ion-option value="1">Concluída</ion-option>
         <ion-option value="2" selected="true">Pendente</ion-option>
         <ion-option value="3">Parado</ion-option>
     </ion-select>    
 
 <!-- Parado -->
     <ion-select cancelText="Oops!" *ngIf="tkParada">
-        <ion-option value="1">Finalizada</ion-option>
+        <ion-option value="1">Concluída</ion-option>
         <ion-option value="2">Pendente</ion-option>
         <ion-option value="3" selected="true">Parada</ion-option>
     </ion-select>    
