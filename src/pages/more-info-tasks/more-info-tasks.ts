@@ -42,6 +42,7 @@ export class MoreInfoTasksPage {
   }
  async AbreAction(){
         const actionSheet = await this.actionSheetController.create({
+          title: 'Selecione o Status',
           buttons: [{
             text: 'Concluida',
             handler: () => {
@@ -60,6 +61,7 @@ export class MoreInfoTasksPage {
           }, {
             text: 'Ooops!',
             role: 'cancel',
+            cssClass:'color: #f53d3d',
             handler: () => {
               
             }
