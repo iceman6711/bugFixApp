@@ -32,4 +32,13 @@ export class MoreInfoTasksPage {
   fechaModal(){
     this.navCtrl.pop();
   }
+  teste(){
+    const toast = this.toastCtrl.create({
+                           message  : 'OOOOOIIIII!!!',
+                           duration : 2000,
+                           position : 'top'
+                    });
+    toast.present();
+    console.log();
+  }
 }
