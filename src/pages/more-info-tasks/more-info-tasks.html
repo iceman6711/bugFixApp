@@ -24,7 +24,7 @@
 
 
     <!-- Task Pendente -->  
-    <div class="center" *ngIf="tkPendente">
+    <div class="center" *ngIf="tkPendente || NewTask && !tkConcluida && !tkParada">
         <h3>Esta Task está</h3>
         <img src="../../assets/imgs/cXSfpfvOQaCr4TUoWLFF_waning.png" style="display:block;width:150px;height:150px;margin-left:auto;margin-right:auto;"/>
         <h1 style="color: rgba(255, 188, 5, 0.829);">Pendente</h1>
@@ -44,7 +44,7 @@
     </ion-label>
     <ion-select cancelText="Oops!" >
             <ion-option value="1">Thiago Serrano</ion-option>
-            <ion-option value="2" selected>Vivian Ikehara</ion-option>
+            <ion-option value="2">Vivian Ikehara</ion-option>
             <ion-option value="3">Thor Odinson</ion-option>
             <ion-option value="4">No one</ion-option>
     </ion-select>    
@@ -57,25 +57,32 @@
     </ion-label>
 
     <!-- Corrigido -->
-    <ion-select [(ngModel)]="tkStatus" cancelText="Oops!" *ngIf="tkConcluida" (ionChange)="teste(tkStatus);">
+    <ion-select [(ngModel)]="tkStatus" cancelText="Oops!" *ngIf="tkConcluida && !NewTask" (ionChange)="MudaStatus(tkStatus);">
             <ion-option value="1" selected>Concluída</ion-option>
             <ion-option value="2">Pendente</ion-option>
             <ion-option value="3">Parado</ion-option>
     </ion-select>  
     
     <!-- Pendente -->
-    <ion-select [(ngModel)]="tkStatus" cancelText="Oops!" *ngIf="tkPendente" (ionChange)="teste(tkStatus);">
+    <ion-select [(ngModel)]="tkStatus" cancelText="Oops!" *ngIf="tkPendente && !NewTask" (ionChange)="MudaStatus(tkStatus);">
         <ion-option value="1">Concluída</ion-option>
         <ion-option value="2" selected>Pendente</ion-option>
         <ion-option value="3">Parado</ion-option>
     </ion-select>    
 
-<!-- Parado -->
-    <ion-select [(ngModel)]="tkStatus" cancelText="Oops!" *ngIf="tkParada" (ionChange)="teste(tkStatus);">
+    <!-- Parado -->
+    <ion-select [(ngModel)]="tkStatus" cancelText="Oops!" *ngIf="tkParada && !NewTask" (ionChange)="MudaStatus(tkStatus);">
         <ion-option value="1">Concluída</ion-option>
         <ion-option value="2">Pendente</ion-option>
         <ion-option value="3" selected>Parada</ion-option>
-    </ion-select>    
+    </ion-select>  
+    
+    <!-- Nova Task! -->
+    <ion-select [(ngModel)]="tkStatus" cancelText="Oops!" *ngIf="NewTask" (ionChange)="MudaStatus(tkStatus);">
+        <ion-option value="1">Concluída</ion-option>
+        <ion-option value="2" selected>Pendente</ion-option>
+        <ion-option value="3">Parada</ion-option>
+    </ion-select> 
 
 </ion-item>
 <ion-item>   

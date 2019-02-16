@@ -37,8 +37,7 @@ export class MoreInfoTasksPage {
     this.tkConcluida = false;
     this.tkParada    = false;
   }
-  teste(tkStatus : any){
-    console.log(tkStatus);
+  MudaStatus(tkStatus : any){
     switch (tkStatus) {
         case '1'  : { this.tkConcluida = true; this.tkParada   = false; this.tkPendente  = false; break; }  
         case '2'  : { this.tkPendente  = true; this.tkParada   = false; this.tkConcluida = false; break; }
