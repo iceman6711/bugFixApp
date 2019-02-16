@@ -1,7 +1,7 @@
 import { MyTasksPage } from './../my-tasks/my-tasks';
 import { MyBugsPage } from './../my-bugs/my-bugs';
 import { Component } from '@angular/core';
-import { NavController, MenuController, NavParams, Platform, Badge } from 'ionic-angular';
+import { NavController, MenuController, NavParams, Platform } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { AlertController } from 'ionic-angular';
 import { HTTP } from '@ionic-native/http';
@@ -16,7 +16,7 @@ export class MenuPage {
     ConnectionType   = 0;
 
 
-  constructor(public navCtrl: NavController, private AlertControl : AlertController, public navParams: NavParams, public menu : MenuController, public http : HTTP, public plt: Platform, private badge: Badge) {
+  constructor(public navCtrl: NavController, private AlertControl : AlertController, public navParams: NavParams, public menu : MenuController, public http : HTTP, public plt: Platform) {
     this.mostraMenu();
     this.pID              = navParams.get('plogado');
     this.ConnectionType   = navParams.get('Conexao');
