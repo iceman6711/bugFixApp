@@ -38,22 +38,12 @@ export class MoreInfoTasksPage {
     this.tkParada    = false;
   }
   teste(tkStatus : any){
-    const toast = this.toastCtrl.create({
-                           message  : 'OOOOOIIIII!!!',
-                           duration : 2000,
-                           position : 'top'
-                    });
-    toast.present();
     console.log(tkStatus);
     switch (tkStatus) {
-        case 1  : { this.zeraVariavel(); this.tkPendente  = true; break; }
-        case 2  : { this.zeraVariavel(); this.tkParada    = true; break; }
-        case 3  : { this.zeraVariavel(); this.tkConcluida = true; break; }
-        case 4  : { this.zeraVariavel(); this.tkPendente  = true; break; }
-        default : { toast.present();                              break; }
+        case '1'  : { this.tkConcluida = true; this.tkParada   = false; this.tkPendente  = false; break; }  
+        case '2'  : { this.tkPendente  = true; this.tkParada   = false; this.tkConcluida = false; break; }
+        case '3'  : { this.tkParada    = true; this.tkPendente = false; this.tkConcluida = false; break; }
+        default   : {    console.log('Não fez nada tio');                                         break; }
     }
-    console.log('Pendente: '+this.tkPendente);
-    console.log('Concluida: '+this.tkConcluida);
-    console.log('Parada : '+this.tkParada);
   }
 }
