@@ -61,10 +61,7 @@ export class MoreInfoTasksPage {
           }, {
             text: 'Ooops!',
             role: 'cancel',
-            cssClass:'color: #f53d3d',
-            handler: () => {
-              
-            }
+            handler: () => {}
           }]
         });
         await actionSheet.present();
