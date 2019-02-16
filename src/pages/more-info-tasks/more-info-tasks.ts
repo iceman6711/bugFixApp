@@ -33,8 +33,8 @@ export class MoreInfoTasksPage {
     this.navCtrl.pop();
   }
   zeraVariavel(){
-    this.tkPendente  =false;
-    this.tkConcluida =false;
+    this.tkPendente  = false;
+    this.tkConcluida = false;
     this.tkParada    = false;
   }
   teste(tkStatus : any){
