@@ -37,7 +37,7 @@ export class MoreInfoTasksPage {
     this.tkConcluida =false;
     this.tkParada    = false;
   }
-  teste(tkStatus : String){
+  teste(tkStatus : any){
     const toast = this.toastCtrl.create({
                            message  : 'OOOOOIIIII!!!',
                            duration : 2000,
@@ -46,10 +46,14 @@ export class MoreInfoTasksPage {
     toast.present();
     console.log(tkStatus);
     switch (tkStatus) {
-        case '1' : { this.zeraVariavel(); this.tkPendente  = true; break; }
-        case '2' : { this.zeraVariavel(); this.tkParada    = true; break; }
-        case '3' : { this.zeraVariavel(); this.tkConcluida = true; break; }
-        case '4' : { this.zeraVariavel(); this.tkPendente  = true; break; }
+        case 1  : { this.zeraVariavel(); this.tkPendente  = true; break; }
+        case 2  : { this.zeraVariavel(); this.tkParada    = true; break; }
+        case 3  : { this.zeraVariavel(); this.tkConcluida = true; break; }
+        case 4  : { this.zeraVariavel(); this.tkPendente  = true; break; }
+        default : { toast.present();                              break; }
     }
+    console.log('Pendente: '+this.tkPendente);
+    console.log('Concluida: '+this.tkConcluida);
+    console.log('Parada : '+this.tkParada);
   }
 }
