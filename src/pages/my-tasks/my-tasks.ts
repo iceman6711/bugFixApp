@@ -14,11 +14,11 @@ export class MyTasksPage {
 
   constructor(public navCtrl: NavController, public toastCtrl: ToastController) {
       this.setTasks();
-     
   }
+
   DeleteItemBtn(item){
     let index = this.tasklist.indexOf(item);
- 
+
     if(index > -1){
         this.tasklist.splice(index, 1);
     }
@@ -29,6 +29,7 @@ export class MyTasksPage {
     });
     toast.present();
   }
+
   DeleteItem(slidingItem: ItemSliding , item){
     let porcentagem = slidingItem.getSlidingPercent();
     if(porcentagem>2.5){
@@ -44,11 +45,12 @@ export class MyTasksPage {
       toast.present();
       slidingItem.close();
       //componentRefresh;
-    } 
+    }
   }
+
   setTasks(){
     this.tasklist = [
-      { 
+      {
         id        : 1,
         descricao : 'Cadastrar Bugs!',
         status    : 0
@@ -71,7 +73,7 @@ export class MyTasksPage {
     ]
   }
   telaMoreInfo(item){
-    let index = this.tasklist.indexOf(item);    
+    let index = this.tasklist.indexOf(item);
     this.navCtrl.push(MoreInfoTasksPage, {'idTask': this.tasklist[index].id });
   }
   telaNewTask(){
