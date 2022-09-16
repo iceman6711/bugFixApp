@@ -86,52 +86,53 @@ unFormat(val) {
      }else{ this.ConnectionType=2; }
   }
   SolicitaHive(CPF,Senha){
-    // var url                                    = '';
-    // let loading = this.ldctrl.create({content : "Logando...."});
-    // loading.present();
-    // if(this.ConnectionType<=1){
-    //         url                                ='http://www.bugfixhive.com.br:8080/Control/cLogin.php?user=true&dev=true&master=trulyistheonethatpushhimselftothelimit&cpf='+CPF+'&senha='+Senha;
-    // }else{  url                                ='http://10.0.0.10:9995/Control/cLogin.php?user=true&dev=true&master=trulyistheonethatpushhimselftothelimit&cpf='+CPF+'&senha='+Senha;  }
-    // var getData='';
-    // return new Promise((resolve)=>{
-    //     if((this.plt.is('ios') || this.plt.is('android')) && !this.plt.is('mobileweb')){
-    //     this.http.get(url,getData,'Access-Control-Allow-Origin: *').then((response:any)=> {
-    //         if(response.status=200){
-    //             try {
-    //                 if(response.data.length<23){
-    //                     loading.dismissAll();
-    //                     this.abretela(response.data);
-    //                 }else { loading.dismissAll(); this.presentAlert('Hive diz..',response.data);}
+    var url                                    = '';
+    let loading = this.ldctrl.create({content : "Logando...."});
+    loading.present();
+    if(this.ConnectionType<=1){
+            url                                ='http://www.bugfixhive.com.br:8080/Control/cLogin.php?user=true&dev=true&master=trulyistheonethatpushhimselftothelimit&cpf='+CPF+'&senha='+Senha;
+    }else{  url                                ='http://10.0.0.10:9995/Control/cLogin.php?user=true&dev=true&master=trulyistheonethatpushhimselftothelimit&cpf='+CPF+'&senha='+Senha;  }
+    var getData='';
+    return new Promise((resolve)=>{
+        if((this.plt.is('ios') || this.plt.is('android')) && !this.plt.is('mobileweb')){
+        this.http.get(url,getData,'Access-Control-Allow-Origin: *').then((response:any)=> {
+            if(response.status=200){
+                try {
+                    if(response.data.length<23){
+                        loading.dismissAll();
+                        this.abretela(response.data);
+                    }else { loading.dismissAll(); this.presentAlert('Hive diz..',response.data);}
 
-    //             } catch (error) {
-    //                 loading.dismissAll();
-    //                 this.presentAlert('Ops!','Erro na leitura da Resposta');
-    //             }
-    //         }
-    //         resolve(response.data);
-    //     }).catch((erro:any)=>{
-    //         loading.dismissAll();
-    //         console.log('Erro       : '+erro.erro);
-    //         console.log('Erro Status: '+erro.status);
-    //     });
-    // }else {
-    //         let ajax = this.iniciaAjax();
-    //         ajax.open('GET', url, false);
-    //         ajax.send();
-    //         if(ajax.responseText.length<23 && ajax.responseText!=''){
-    //             loading.dismiss();
-    //             this.abretela(ajax.responseText);
-    //         }else{
-    //             loading.dismiss();
-    //             this.presentAlert('Hive Diz..',ajax.responseText);
-    //         }
-    //     }
-    // });
-    this.abretela();
+                } catch (error) {
+                    loading.dismissAll();
+                    this.presentAlert('Ops!','Erro na leitura da Resposta');
+                }
+            }
+            resolve(response.data);
+        }).catch((erro:any)=>{
+            loading.dismissAll();
+            console.log('Erro       : '+erro.erro);
+            console.log('Erro Status: '+erro.status);
+        });
+    }else {
+            let ajax = this.iniciaAjax();
+            ajax.open('GET', url, false);
+            ajax.send();
+            if(ajax.responseText.length<23 && ajax.responseText!=''){
+                loading.dismiss();
+                this.abretela(ajax.responseText);
+            }else{
+                loading.dismiss();
+                this.presentAlert('Hive Diz..',ajax.responseText);
+            }
+        }
+    });
   }
   login(CPF : String, Senha : String){
         //Inicia as Variaveis
         //Comeca os Testes
+        this.abretela();
+        return
         if(CPF.length>=14){
             if(Senha.length==8){
                     this.SolicitaHive(CPF,Senha);
